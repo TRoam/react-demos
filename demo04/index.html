@@ -14,8 +14,14 @@
         }
       });
 
+      var Header = React.createClass({
+        render: function(){
+          return <h2>I am class {this.props.game}</h2>;
+        }
+      });
+
       ReactDOM.render(
-        <HelloMessage name="John" />,
+        <Header game="first " /> ,
         document.getElementById('example')
       );
     </script>

@@ -10,17 +10,26 @@
     <script type="text/babel">
 var LikeButton = React.createClass({
   getInitialState: function() {
-    return {liked: false};
+    return {liked: false,
+            follow: false
+    };
   },
   handleClick: function(event) {
     this.setState({liked: !this.state.liked});
   },
+  handleFollow: function(event){
+    this.setState({follow: !this.state.follow,liked: !this.state.liked});
+  },
   render: function() {
     var text = this.state.liked ? 'like' : 'haven\'t liked';
+    var title = this.state.follow ? 'yes': 'no';
     return (
+    <div>
       <p onClick={this.handleClick}>
         You {text} this. Click to toggle.
       </p>
+      <p onClick = {this.handleFollow}> {title}</p>
+      </div>
     );
   }
 });

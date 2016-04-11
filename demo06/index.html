@@ -8,9 +8,14 @@
   <body>
     <script type="text/babel">
 
-      var data = 123;
+      var data = "23";
 
       var MyTitle = React.createClass({
+        getDefaultProps: function () {
+           return {
+             title: 'Hi, Roam'
+           };
+        },
         propTypes: {
           title: React.PropTypes.string.isRequired,
         },
